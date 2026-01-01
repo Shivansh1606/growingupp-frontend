@@ -57,7 +57,7 @@ const services = [
     features: ["React/Next.js", "Mobile Apps", "PWA", "E-commerce"],
     gradient: "from-blue-500 to-cyan-500",
     bgImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwqklT_0iGtoJnZaoewb8RzpOJjCsmmk_eEQ&s"
+    imageUrl: "https://5.imimg.com/data5/RQ/ZU/WK/SELLER-38338941/web-and-app-development-services-500x500.jpg"
   },
   {
     title: "Enterprise Software Modernization", 
@@ -65,7 +65,7 @@ const services = [
     features: ["System Migration", "API Development", "Cloud Integration", "Automation"],
     gradient: "from-purple-500 to-pink-500",
     bgImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwqklT_0iGtoJnZaoewb8RzpOJjCsmmk_eEQ&s"
+    imageUrl: "https://www.rishabhsoft.com/wp-content/uploads/2023/04/Banner-Image-Enterprise-App-Modernization.jpg"
   },
   {
     title: "Data Analytics & BI",
@@ -73,7 +73,7 @@ const services = [
     features: ["Business Intelligence", "Data Visualization", "Predictive Analytics", "Dashboards"],
     gradient: "from-green-500 to-teal-500",
     bgImage: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwqklT_0iGtoJnZaoewb8RzpOJjCsmmk_eEQ&s"
+    imageUrl: "https://globalcybersecuritynetwork.com/wp-content/uploads/2025/06/Best-bi-platforms-of-2025-blog-image.jpg"
   },
   {
     title: "AI & Emerging Tech",
@@ -81,7 +81,7 @@ const services = [
     features: ["Machine Learning", "AI Solutions", "Automation", "Chatbots"],
     gradient: "from-orange-500 to-yellow-500",
     bgImage: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwqklT_0iGtoJnZaoewb8RzpOJjCsmmk_eEQ&s"
+    imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTqrC5wSIiIVDd5PdBFvKEr5Bbvr8VpJ_u02t0SAc1xdL-45UK"
   },
   {
     title: "Cloud & DevOps",
@@ -89,7 +89,7 @@ const services = [
     features: ["AWS/Azure", "CI/CD", "Docker", "Kubernetes"],
     gradient: "from-blue-600 to-indigo-600",
     bgImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwqklT_0iGtoJnZaoewb8RzpOJjCsmmk_eEQ&s"
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-hevGY-dhE2oPb0RB9f-Tnp6TVIiXceTPsA&s"
   },
   {
     title: "Cybersecurity & QA",
@@ -97,10 +97,9 @@ const services = [
     features: ["Security Audits", "Quality Testing", "Compliance", "Risk Assessment"],
     gradient: "from-red-500 to-pink-500",
     bgImage: "linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwqklT_0iGtoJnZaoewb8RzpOJjCsmmk_eEQ&s"
+    imageUrl: "https://www.puredome.com/hs-fs/hubfs/Feature%20image-%20The%20Crucial%20Role%20of%20Cyber%20Security%20Quality%20Assurance%20(1).png?width=1728&height=834&name=Feature%20image-%20The%20Crucial%20Role%20of%20Cyber%20Security%20Quality%20Assurance%20(1).png"
   }
 ];
-
 // Company Stats
 const stats = [
   { number: "50+", label: "Projects Completed", icon: FaRocket },
