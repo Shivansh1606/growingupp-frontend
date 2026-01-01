@@ -23,20 +23,21 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      {/* UPDATED: max-w-7xl added for better centering */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* UPDATED LOGO - Fixed position & path */}
-          <Link to="/" className="flex items-center gap-3">
+          {/* Logo - Compact */}
+          <Link to="/" className="flex items-center gap-2">
             <img 
               src="/logo.png"
               alt="GrowingUpp" 
               className="h-10 w-auto"
             />
-            
+           
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Navigation - UPDATED: Removed extra spacing */}
+          <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
             {navLinks.map((link, index) => (
               <motion.div
                 key={link.name}
@@ -59,7 +60,7 @@ export default function Header() {
           </nav>
 
           {/* Desktop CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center">
             <motion.a
               href="/contact"
               className="px-6 py-2 rounded-lg font-semibold bg-yellow-400 text-black hover:bg-yellow-500 hover:shadow-lg transition-all duration-200"
