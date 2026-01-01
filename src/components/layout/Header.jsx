@@ -38,7 +38,7 @@ export default function Header() {
     }}
   />
   <div className="md:flex items-center">
-    <span className="text-xl font-bold text-black">GrowingUpp</span>
+    
   </div>
 </Link>
 
