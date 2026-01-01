@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-yellow-400/30 mt-12 pt-6 text-center text-gray-500">
-          <p>&copy; 2026 GrowingUpp. All rights reserved.</p>
+          <p>&copy; 2024 GrowingUpp. All rights reserved.</p>
         </div>
       </div>
     </footer>
