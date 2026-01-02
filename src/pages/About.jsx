@@ -30,9 +30,9 @@ import {
   HiSparkles,
   HiTrendingUp
 } from "react-icons/hi";
+import ScrollToTop from "../components/common/ScrollToTop";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
-import ScrollToTop from "../components/common/ScrollToTop";
 
 // Enhanced Stats
 const stats = [
@@ -556,153 +556,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Enhanced Team Section */}
-        <section className="py-24 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-green-100 text-green-600 text-sm font-medium">
-                <FaUsers />
-                Our Team
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Meet Our Experts</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Talented individuals who bring creativity, technical expertise, and passion to every project we undertake.
-              </p>
-            </motion.div>
-
-            <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
-                {team.map((member, index) => (
-                  <motion.div
-                    key={member.name}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    onClick={() => setActiveTeamMember(index)}
-                    className={`group cursor-pointer bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 ${
-                      activeTeamMember === index ? 'border-yellow-200 scale-105' : 'border-gray-100'
-                    }`}
-                    whileHover={{ y: -4 }}
-                  >
-                    <div className="text-center">
-                      <div className={`w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-2xl font-bold group-hover:scale-110 transition-transform duration-300`}>
-                        {member.name.split(' ').map(n => n.charAt(0)).join('')}
-                      </div>
-                      
-                      <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                      <p className="text-yellow-600 font-medium mb-3">{member.role}</p>
-                      
-                      <div className="flex flex-wrap gap-2 justify-center mb-4">
-                        {member.skills.map((skill) => (
-                          <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="flex flex-wrap gap-1 justify-center">
-                        {member.achievements.map((achievement) => (
-                          <span key={achievement} className="px-2 py-1 bg-yellow-100 text-yellow-600 text-xs rounded">
-                            {achievement}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <motion.div
-                key={activeTeamMember}
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-3xl p-8 shadow-lg h-fit"
-              >
-                <div className={`w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${team[activeTeamMember].gradient} flex items-center justify-center text-white text-xl font-bold`}>
-                  {team[activeTeamMember].name.split(' ').map(n => n.charAt(0)).join('')}
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2">{team[activeTeamMember].name}</h3>
-                <p className="text-yellow-600 font-semibold mb-4">{team[activeTeamMember].role}</p>
-                <p className="text-gray-600 mb-6 leading-relaxed">{team[activeTeamMember].bio}</p>
-
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3">Achievements:</h4>
-                  <div className="space-y-2">
-                    {team[activeTeamMember].achievements.map((achievement) => (
-                      <div key={achievement} className="flex items-center gap-2">
-                        <FaCheckCircle className="text-green-500 text-sm" />
-                        <span className="text-sm text-gray-600">{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="flex gap-3">
-                  {Object.entries(team[activeTeamMember].social).map(([platform, link]) => {
-                    const Icon = platform === 'linkedin' ? FaLinkedin : platform === 'twitter' ? FaTwitter : FaGithub;
-                    return (
-                      <motion.a
-                        key={platform}
-                        href={link}
-                        className="p-3 bg-gray-50 rounded-xl hover:shadow-md transition-all duration-300"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <Icon className="text-gray-600 hover:text-yellow-600" />
-                      </motion.a>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section - WHITE BACKGROUND WITH THEME COLORS */}
-        <section className="py-24 bg-white relative overflow-hidden mb-0">
-          <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center max-w-4xl mx-auto"
-            >
-              <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                <span className="text-neutral-900">Ready to </span>
-                <span className="text-yellow-400">Work Together?</span>
-              </h2>
-              <p className="text-xl md:text-2xl mb-12 text-gray-600 max-w-3xl mx-auto">
-                Join our growing list of satisfied clients and let's create something extraordinary together. 
-                Transform your digital presence with our expertise and passion.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.a
-                  href="/contact"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-yellow-400 text-black font-bold rounded-2xl hover:bg-yellow-500 hover:shadow-xl transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                >
-                  Get In Touch
-                  <HiSparkles />
-                </motion.a>
-                <motion.a
-                  href="/projects"
-                  className="inline-flex items-center gap-3 px-8 py-4 border-2 border-yellow-400 text-yellow-600 font-bold rounded-2xl hover:bg-yellow-400 hover:text-black transition-all"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                >
-                  View Our Work
-                  <FaGlobe />
-                </motion.a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </main>
       <Footer />
       <ScrollToTop />

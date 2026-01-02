@@ -111,12 +111,12 @@ const stats = [
 // Client Testimonials
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Vinod Sharma",
     company: "TechCorp Inc.",
     role: "CTO",
     text: "GrowingUpp transformed our vision into reality with their exceptional development skills. The team delivered beyond our expectations!",
     rating: 5,
-    avatar: "SJ",
+    avatar: "VS",
     project: "E-commerce Platform"
   },
   {
@@ -129,21 +129,21 @@ const testimonials = [
     project: "Mobile App Development"
   },
   {
-    name: "Maria Garcia",
+    name: "Kartik Mehta",
     company: "Digital Solutions Ltd",
     role: "Product Manager",
     text: "Professional, reliable, and innovative. GrowingUpp helped us scale our platform to serve 100K+ users seamlessly.",
     rating: 5,
-    avatar: "MG",
+    avatar: "KM",
     project: "Cloud Infrastructure"
   },
   {
-    name: "David Kim",
+    name: "Jitesh Jain",
     company: "FinTech Innovations",
     role: "Head of Technology",
     text: "The custom software solution they built for us streamlined our operations and saved us 40% in operational costs.",
     rating: 5,
-    avatar: "DK",
+    avatar: "JJ",
     project: "Custom Software"
   }
 ];

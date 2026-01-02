@@ -263,13 +263,7 @@ export default function Services() {
           Explore Services
           <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
         </motion.a>
-        <motion.button
-          className="inline-flex items-center gap-3 px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-bold rounded-2xl hover:bg-yellow-400 hover:text-black transition-all"
-          whileHover={{ scale: 1.05, y: -2 }}
-        >
-          <FaPlay />
-          Watch Demo
-        </motion.button>
+
       </div>
     </motion.div>
   </div>
@@ -507,12 +501,7 @@ export default function Services() {
                       >
                         Get Started
                       </motion.a>
-                      <motion.button
-                        className="px-6 py-3 border-2 border-gray-300 rounded-xl font-semibold text-gray-700 hover:border-gray-400 transition-colors"
-                        whileHover={{ scale: 1.02 }}
-                      >
-                        Learn More
-                      </motion.button>
+
                     </div>
                   </div>
                 </div>

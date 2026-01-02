@@ -49,17 +49,6 @@ const contactMethods = [
     gradient: "from-green-500 to-green-600",
     available: true
   },
-  {
-    icon: FaMapMarkerAlt,
-    title: "Visit Our Office",
-    subtitle: "Meet in person",
-    details: "Sector 62, Noida",
-    description: "Uttar Pradesh, India",
-    action: "Get Directions",
-    href: "https://maps.google.com",
-    gradient: "from-purple-500 to-indigo-600",
-    available: true
-  }
 ];
 
 const workingHours = [
@@ -161,81 +150,83 @@ export default function Contact() {
       <main className="pt-20">
         {/* Hero Section - NO IMAGE, NO PARTICLES */}
         
-        {/* Contact Methods Grid */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
+        {/* Contact Methods Grid - UPDATED WITH CENTERED LAYOUT */}
+<section className="py-24 bg-white">
+  <div className="container mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        Choose your preferred way to connect with us. We're here to help!
+      </p>
+    </motion.div>
+
+    {/* UPDATED: Added max-w-6xl and mx-auto for better centering */}
+    <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+      {contactMethods.map((method, index) => (
+        <motion.div
+          key={method.title}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          onMouseEnter={() => setSelectedMethod(index)}
+          className="group relative overflow-hidden bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
+          whileHover={{ y: -8, scale: 1.02 }}
+        >
+          {/* Background Gradient */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${method.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+          
+          {/* Status Indicator */}
+          {method.available && (
+            <div className="absolute top-4 right-4 flex items-center gap-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs text-green-600 font-medium">Available</span>
+            </div>
+          )}
+
+          <div className="relative z-10">
+            {/* Icon */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
+              className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${method.gradient} text-white group-hover:scale-110 transition-transform duration-300`}
+              animate={{
+                y: selectedMethod === index ? -5 : 0,
+                rotate: selectedMethod === index ? 5 : 0,
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Choose your preferred way to connect with us. We're here to help!
-              </p>
+              <method.icon size={28} />
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactMethods.map((method, index) => (
-                <motion.div
-                  key={method.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  onMouseEnter={() => setSelectedMethod(index)}
-                  className="group relative overflow-hidden bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100"
-                  whileHover={{ y: -8, scale: 1.02 }}
-                >
-                  {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${method.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                  
-                  {/* Status Indicator */}
-                  {method.available && (
-                    <div className="absolute top-4 right-4 flex items-center gap-1">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs text-green-600 font-medium">Available</span>
-                    </div>
-                  )}
+            {/* Content */}
+            <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors">
+              {method.title}
+            </h3>
+            <p className="text-sm text-purple-600 font-medium mb-2">{method.subtitle}</p>
+            <p className="text-gray-800 font-medium mb-2">{method.details}</p>
+            <p className="text-gray-600 text-sm mb-6">{method.description}</p>
 
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <motion.div
-                      className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br ${method.gradient} text-white group-hover:scale-110 transition-transform duration-300`}
-                      animate={{
-                        y: selectedMethod === index ? -5 : 0,
-                        rotate: selectedMethod === index ? 5 : 0,
-                      }}
-                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    >
-                      <method.icon size={28} />
-                    </motion.div>
-
-                    {/* Content */}
-                    <h3 className="text-xl font-bold mb-2 text-gray-800 group-hover:text-purple-600 transition-colors">
-                      {method.title}
-                    </h3>
-                    <p className="text-sm text-purple-600 font-medium mb-2">{method.subtitle}</p>
-                    <p className="text-gray-800 font-medium mb-2">{method.details}</p>
-                    <p className="text-gray-600 text-sm mb-6">{method.description}</p>
-
-                    {/* Action Button */}
-                    <motion.a
-                      href={method.href}
-                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r ${method.gradient} text-white hover:shadow-lg transition-all duration-300`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {method.action}
-                      <FaArrowRight size={12} />
-                    </motion.a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            {/* Action Button */}
+            <motion.a
+              href={method.href}
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r ${method.gradient} text-white hover:shadow-lg transition-all duration-300`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {method.action}
+              <FaArrowRight size={12} />
+            </motion.a>
           </div>
-        </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* Interactive Contact Form */}
         <section id="contact-form" className="py-24 bg-gray-50">
@@ -487,21 +478,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Working Hours */}
-                <div className="bg-white rounded-3xl p-8 shadow-lg">
-                  <h4 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                    <HiClock className="text-purple-600" />
-                    Working Hours
-                  </h4>
-                  <div className="space-y-4">
-                    {workingHours.map((schedule, index) => (
-                      <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-b-0">
-                        <span className="font-medium text-gray-700">{schedule.day}</span>
-                        <span className="text-gray-600">{schedule.time}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Quick Stats */}
                 <div className="bg-white rounded-3xl p-8 shadow-lg">
@@ -530,68 +506,7 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Testimonials Carousel */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">What Clients Say</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Real feedback from our satisfied clients around the world
-              </p>
-            </motion.div>
 
-            <div className="max-w-4xl mx-auto">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentTestimonial}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-12 text-center"
-                >
-                  <div className="flex justify-center mb-6">
-                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <FaStar key={i} className="text-2xl text-yellow-400" />
-                    ))}
-                  </div>
-                  <blockquote className="text-2xl font-medium text-gray-800 mb-8 leading-relaxed">
-                    "{testimonials[currentTestimonial].text}"
-                  </blockquote>
-                  <div className="flex items-center justify-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold">
-                      {testimonials[currentTestimonial].avatar}
-                    </div>
-                    <div className="text-left">
-                      <div className="font-bold text-gray-800">{testimonials[currentTestimonial].name}</div>
-                      <div className="text-gray-600">{testimonials[currentTestimonial].company}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Testimonial Indicators */}
-              <div className="flex justify-center gap-3 mt-8">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentTestimonial(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      currentTestimonial === index 
-                        ? 'bg-purple-600 w-8' 
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
         <section className="py-24 bg-gray-50">

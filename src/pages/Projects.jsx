@@ -12,7 +12,6 @@ import {
 import { HiSparkles } from "react-icons/hi";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
-import ReadyToGrow from '../components/sections/ReadyToGrow';
 import ScrollToTop from "../components/common/ScrollToTop";
 
 const projects = [
@@ -32,10 +31,6 @@ const projects = [
       revenue: "$500K+",
       rating: "4.8/5"
     },
-    links: {
-      live: "#",
-      github: "#"
-    }
   },
   {
     id: 2,
@@ -52,10 +47,6 @@ const projects = [
       rating: "4.9/5",
       retention: "85%"
     },
-    links: {
-      live: "#",
-      github: "#"
-    }
   },
   {
     id: 3,
@@ -72,10 +63,6 @@ const projects = [
       tasks: "100K+",
       satisfaction: "96%"
     },
-    links: {
-      live: "#",
-      github: "#"
-    }
   },
   {
     id: 4,
@@ -93,10 +80,7 @@ const projects = [
       accuracy: "94%",
       response_time: "0.5s"
     },
-    links: {
-      live: "#",
-      github: "#"
-    }
+
   },
   {
     id: 5,
@@ -113,10 +97,7 @@ const projects = [
       users: "15K+",
       sales: "$2M+"
     },
-    links: {
-      live: "#",
-      github: "#"
-    }
+
   },
   {
     id: 6,
@@ -133,10 +114,6 @@ const projects = [
       posts: "50K+",
       engagement: "+200%"
     },
-    links: {
-      live: "#",
-      github: "#"
-    }
   }
 ];
 
@@ -309,29 +286,6 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <motion.button
-                        className="flex-1 py-2 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-sm hover:shadow-lg transition-all"
-                        whileHover={{ scale: 1.02 }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(project.links.live, '_blank');
-                        }}
-                      >
-                        View Live
-                      </motion.button>
-                      <motion.button
-                        className="p-2 border border-gray-300 rounded-xl text-gray-600 hover:border-blue-400 hover:text-blue-600 transition-all"
-                        whileHover={{ scale: 1.05 }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(project.links.github, '_blank');
-                        }}
-                      >
-                        <FaGithub size={16} />
-                      </motion.button>
-                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -463,27 +417,12 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
-                  <a
-                    href={selectedProject.links.live}
-                    className="flex-1 py-3 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-center hover:shadow-lg transition-all"
-                  >
-                    View Live Project
-                  </a>
-                  <a
-                    href={selectedProject.links.github}
-                    className="px-6 py-3 border-2 border-gray-300 rounded-xl font-semibold text-gray-700 hover:border-gray-400 transition-colors flex items-center gap-2"
-                  >
-                    <FaGithub />
-                    Code
-                  </a>
-                </div>
+
               </div>
             </motion.div>
           </motion.div>
         )}
-      </main>
-      <ReadyToGrow /> 
+      </main> 
       <Footer />
       <ScrollToTop />
     </div>
